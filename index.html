@@ -1,0 +1,22 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="push.min.js"></script>
+<script src="serviceWorker.min.js"></script>
+<script>
+function start(){
+	Push.create("Hello team!", {
+		body: "Hello team",
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/INQ_logo.png',
+		timeout: 70000,
+		onClick: function () {
+			window.focus();
+			this.close();
+		}
+	});
+}
+
+function clear(){
+	Push.clear();
+}
+</script>
+<a href="javascript:void(0)" onclick="start()">Start</a>
+<a href="javascript:void(0)" onclick="clear()">Clear</a>
